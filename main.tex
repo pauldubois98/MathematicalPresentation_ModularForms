@@ -59,9 +59,10 @@
 		\frametitle{Modular Forms Modulo 2}
 		$$
 		\mathcal{F}
-		= \left\langle \Delta^k \mid k \text{ odd} \right\rangle
-		= \left\langle \Delta, \Delta^3, \Delta^5, \dots \right\rangle.
+		= \left\langle \Delta^k \mid k \text{ odd} \right\rangle_{\mathbb{F}_2}
+		= \left\langle \Delta, \Delta^3, \Delta^5, \dots \right\rangle_{\mathbb{F}_2}
 		$$
+		
 		\begin{align*}
 			\Delta(q)
 			&= q \prod_{n=1}^{\infty} (1-q^n)^{24}\\
@@ -85,6 +86,7 @@
 		\gamma(n) = \sum_{a | (n,m),\, a \geq 1} a^{2k-1} c\left( \frac{mn}{a^2} \right)
 		$$
 	\end{frame}
+
 	\begin{frame}
 		\frametitle{Hecke Operators Modulo 2}
 		With
@@ -142,9 +144,6 @@ node distance=1cm
 \draw[<->]              (Tf) to (Tdf);
 			\end{tikzpicture}
 		\end{center}
-		
-		
-
 	\end{frame}
 
 	\begin{frame}
@@ -194,18 +193,64 @@ node distance=1cm
 
 	\begin{frame}
 		\frametitle{Chebotarev Density Theorem}
-		[to write]
+		\begin{theorem}[Chebotarev Density Theorem]
+			With $L/K$ an extension of Galois group $G=\text{Gal}(L/K)$.\\
+			Let $C$ be a conjugacy class in $G$.
+			
+			Then, the proportion of unramified primes ideals $\mathfrak{p}$ in $K$ that have Frobenius element $\text{Frob}_{L/K}(\mathfrak{p})=C$
+			%\footnote{When depending on a prime in the "lower" field, the Frobenius element is a conjugacy class to be well defined.}
+			is $\nicefrac{|C|}{|G|}$.
+		\end{theorem}
+		
+		\vspace{1cm}
+		
+		$L = \mathbb{Q}(\zeta_n)$ and $K= \mathbb{Q}$ give Dirichlet's density theorem.
+		
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Frobenian Maps}
-		[definition]
+		With $K$ a number field, $P$ the set of primes in $K$.
+		$f: P \to \Omega$ is Frobenian if there exists
+		\begin{itemize}
+			\item a set $S \subset P$
+			\item a field $M$ extending $K$
+			\item a class function $\phi: \text{Gal}(M/K) \to \Omega$
+		\end{itemize}
+		such that:
+		$$f(\mathfrak{p}) = \phi( \text{Frob}_{M/K}(\mathfrak{p})) \qquad \forall \mathfrak{p} \in P \setminus S$$
 	\end{frame}
+
 	\begin{frame}
 		\frametitle{The maps $a_{ij}$}
 		$$T_p = \sum_{i+j \geq 1} a_{ij}(p) T_3^iT_5^j$$
 		\vspace{1cm}
-		$$a_{ij}: p \mapsto a_{ij}(p)$$
+		$$a_{ij}: p \mapsto a_{ij}(p) \text{ is Frobenian}$$
+		
+		$$M_{ij} \text{ denotes a governing field for } a_{ij}$$
+		$$G_{ij} \text{ denotes a governing group for } a_{ij}$$
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Known identities}
+		\begin{itemize}
+			\item
+			$a_{10}(p)=1 \iff p \equiv 3 \bmod 8$
+			\item
+			$a_{01}(p)=1 \iff p \equiv 5 \bmod 8$
+			\item
+			$a_{11}(p)=1 \iff p \equiv 7 \bmod 8$
+			\item 
+			$\begin{matrix}
+				a_{20}(p)=1 \iff &\exists a,b \in \mathbb{Z} \text{ and } b \text{ odd},\text{ such that }\\
+				&p=a^2+8b^2, p \equiv 3 \bmod 8
+			\end{matrix}$
+			\item
+			$\begin{matrix}
+				a_{02}(p)=1 \iff &\exists a,b \in \mathbb{Z} \text{ and } b \text{ odd},\text{ such that }\\
+				&p=a^2+16b^2, p \equiv 3 \bmod 8
+			\end{matrix}$
+		\end{itemize}
 	\end{frame}
 
 	\begin{frame}
@@ -221,7 +266,14 @@ node distance=1cm
 		
 		$$M_{02} = \mathbb{Q}\left(\zeta_8, \sqrt{1+i} \right)$$
 		$$M_{01} = \mathbb{Q}\left(\zeta_8\right)$$
+		
+		\vspace{0.5cm}
+		
+		\begin{flushright}
+			Note $\mathbb{Q}\left( \zeta_8 \right) = \mathbb{Q}\left( i, \sqrt{2} \right)$
+		\end{flushright}
 	\end{frame}
+
 	\begin{frame}
 		\frametitle{Potential New Governing Fields}
 		$$M_{03} \stackrel{?}{=} \mathbb{Q}\left(\zeta_8, \sqrt[4]{2}, \sqrt{\alpha}\right)$$
@@ -232,15 +284,16 @@ node distance=1cm
 			&\frac{3672578267558083 \cdot \sqrt[4]{2}^3}{562949953421312} + \frac{3582104167901087}{281474976710656}
 		\end{align*}
 	\end{frame}
+
 	\begin{frame}
 	\frametitle{Potential New Governing Fields}
 		$$M_{05} \stackrel{?}{=}\mathbb{Q}\left(\zeta_8, \sqrt[4]{2}, \sqrt{\alpha}, \sqrt{\beta}\right)$$
-		where:
-		\begin{align*}
-			\alpha =
-			&- \frac{3136435454775881 \sqrt[4]{2}}{562949953421312} + \frac{4208721080340285 \sqrt{2}}{2251799813685248} \\
-			&+ \frac{3672578267558083 \cdot \sqrt[4]{2}^3}{562949953421312} + \frac{3582104167901087}{281474976710656}
-		\end{align*}
+		where $\alpha$ remains
+%		\begin{align*}
+%			\alpha =
+%			&- \frac{3136435454775881 \sqrt[4]{2}}{562949953421312} + \frac{4208721080340285 \sqrt{2}}{2251799813685248} \\
+%			&+ \frac{3672578267558083 \cdot \sqrt[4]{2}^3}{562949953421312} + \frac{3582104167901087}{281474976710656}
+%		\end{align*}
 		and
 		\begin{align*}
 		\beta = 
@@ -248,12 +301,12 @@ node distance=1cm
 		- \frac{1240182980093567 \alpha^{6}}{562949953421312} \\
 		&- \frac{336382584949535 \alpha^{\frac{9}{2}}}{2199023255552} 
 		- \frac{6445823996745319 \alpha^{4}}{140737488355328} \\
-		&-\dots \\
-%		&- \frac{4638634719581101 \alpha^{\frac{5}{2}}}{35184372088832} 
-%		- \frac{2954723016803317 \alpha^{2}}{70368744177664} 
-%		\\
-%		&- \frac{5142889464378747 \sqrt[4]{2}}{140737488355328} 
-%		- \frac{4198844765367981 \sqrt{\alpha}}{1125899906842624} \\
+		&- \frac{4638634719581101 \alpha^{\frac{5}{2}}}{35184372088832} 
+		- \frac{2954723016803317 \alpha^{2}}{70368744177664} 
+		\\
+		&- \frac{5142889464378747 \sqrt[4]{2}}{140737488355328} 
+		- \frac{4198844765367981 \sqrt{\alpha}}{1125899906842624} \\
+		&+\dots \\
 %		&+ \frac{3450571136356681 \sqrt{2}}{281474976710656} 
 %		+ \frac{6022015868546055 \cdot \sqrt[4]{2}^3}{140737488355328} \\
 %		&+ \frac{5763554133419461}{70368744177664} 
@@ -451,6 +504,6 @@ node distance=1cm
 		\end{center}
 	\end{frame}
 
-	\include{extras}
+
 
 \end{document}

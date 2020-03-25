@@ -47,12 +47,14 @@
 		$$\left\lbrace f \in M_n \mid f = \sum_{n \in \mathbb{N}} c(n)q^n \text{ s.t. } c(n) \in \mathbb{Z} \right\rbrace$$
 		$$\rotatebox{90}{$=$}$$
 		$$\mathbb{Z}\left[ \Delta, E_2, E_3 \right]$$
-		
+		{\scriptsize $$\qquad\qquad \uparrow \text{(with weight n)}$$}
 		$$\overline{\Delta} \rightsquigarrow \varDelta$$
 		$$\overline{E_2} \rightsquigarrow 1$$
 		$$\overline{E_3} \rightsquigarrow 1$$
 		
 		$$\overline{\mathbb{Z}\left[ \Delta, E_2, E_3 \right]} \rightsquigarrow \mathbb{F}_2 \left[ \varDelta \right]$$
+		
+		\vspace{1cm}
 	\end{frame}
 
 	\begin{frame}
@@ -79,7 +81,7 @@
 		$$
 		We define
 		$$
-		\overline{T_m}|f(q) = \sum_{n \in \mathbb{N}} \gamma(n)q^n
+		T_m|f(q) = \sum_{n \in \mathbb{N}} \gamma(n)q^n
 		$$
 		Where
 		$$
@@ -154,7 +156,7 @@ node distance=1cm
 			&= \mathbb{F}_2\left[ T_p \mid p \in \mathbb{P} \right]
 		\end{align*}
 		
-		$$A = \mathbb{F}_2 \left[\left[ T_3, T_5 \right]\right]$$
+		$$A \cong \mathbb{F}_2 \left[\left[ T_3, T_5 \right]\right]$$
 		
 		$$T_p = \sum_{i+j \geq 1} a_{ij}(p) T_3^iT_5^j$$
 	\end{frame}
@@ -213,7 +215,7 @@ node distance=1cm
 		With $K$ a number field, $P$ the set of primes in $K$.
 		$f: P \to \Omega$ is Frobenian if there exists
 		\begin{itemize}
-			\item a set $S \subset P$
+			\item a (finite) set $S \subset P$
 			\item a field $M$ extending $K$
 			\item a class function $\phi: \text{Gal}(M/K) \to \Omega$
 		\end{itemize}
@@ -243,12 +245,12 @@ node distance=1cm
 			\item 
 			$\begin{matrix}
 				a_{20}(p)=1 \iff &\exists a,b \in \mathbb{Z} \text{ and } b \text{ odd},\text{ such that }\\
-				&p=a^2+8b^2, p \equiv 3 \bmod 8
+				&p=a^2+8b^2
 			\end{matrix}$
 			\item
 			$\begin{matrix}
 				a_{02}(p)=1 \iff &\exists a,b \in \mathbb{Z} \text{ and } b \text{ odd},\text{ such that }\\
-				&p=a^2+16b^2, p \equiv 3 \bmod 8
+				&p=a^2+16b^2
 			\end{matrix}$
 		\end{itemize}
 	\end{frame}
